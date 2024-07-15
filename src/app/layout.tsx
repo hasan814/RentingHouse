@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
+import ToasterProviders from "@/providers/ToasterProviders";
+import RegsiterModal from "@/modules/Modal/RegisterModal";
 import ClientOnly from "@/providers/ClientOnly";
 import Header from "@/layout/Header";
-import Modal from "@/modules/Modal/Modal";
 
 import "./globals.css";
 
@@ -23,7 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.className}>
         <ClientOnly>
-          <Modal isOpen title="hello world" actionLabel="submit" />
+          <ToasterProviders />
+          <RegsiterModal />
           <Header />
         </ClientOnly>
         {children}

@@ -5,8 +5,12 @@ import { useCallback, useState } from "react";
 
 import MenuItem from "./MenuItem";
 import Avatar from "./Avatar";
+import { useRegisterModal } from "@/hooks/useRegisterModal";
 
 const UserMenu = () => {
+  // =========== Register ============
+  const registerModal = useRegisterModal();
+
   // =========== State ============
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,9 +41,10 @@ const UserMenu = () => {
       </div>
       {isOpen && (
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
-          <div className="flex flex-row cursor-pointer">
+          <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem onClick={() => {}} label="Sign Up" />
+              <MenuItem onClick={() => {}} label="Login" />
+              <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
             </>
           </div>
         </div>

@@ -7,16 +7,15 @@ import { IoMdClose } from "react-icons/io";
 import Buttons from "@/elements/Buttons";
 
 const Modal = ({
+  body,
+  title,
   isOpen,
+  footer,
   onClose,
   onSubmit,
-  title,
-  body,
-  footer,
   disabled,
   actionLabel,
   secondaryAction,
-  secondaryLabel,
   secondaryActionLabel,
 }: ModalProps) => {
   // ============ State ==============
@@ -57,7 +56,7 @@ const Modal = ({
             showModal ? "translate-y-0" : "translate-y-full"
           } ${showModal ? "opacity-100" : "opacity-0"}`}
         >
-          <div className="translate h-full lg:h-auto md:h-auto border-0 rounded-0 shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+          <div className="translate h-full lg:h-auto md:h-auto border-0 rounded-md shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <div className="flex items-center p-6 rounded-t justify-center relative border-b-[1px]">
               <button
                 onClick={handleClose}
@@ -84,6 +83,7 @@ const Modal = ({
                   onClick={handleSubmit}
                 />
               </div>
+              {footer}
             </div>
           </div>
         </div>

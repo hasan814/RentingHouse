@@ -1,3 +1,4 @@
+import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
 import { IconType } from "react-icons";
 
 export interface ClientOnlyProps {
@@ -17,7 +18,6 @@ export interface ModalProps {
   onSubmit: () => void;
   onClose: () => void;
   secondaryActionLabel?: string;
-  secondaryLabel?: string;
   actionLabel: string;
   disabled?: boolean;
   footer?: React.ReactElement;
@@ -33,4 +33,33 @@ export interface ButtonsProps {
   label: string;
   small?: boolean;
   icon?: IconType;
+}
+
+export interface RegisterModalStoreProps {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+export interface HeadingProps {
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+}
+
+export interface InputProps {
+  id: string;
+  label: string;
+  type?: string;
+  required?: boolean;
+  disabled?: boolean;
+  formatPrice?: boolean;
+  register: UseFormRegister<any>;
+  errors?: FieldErrorsImpl<any>;
+}
+
+export interface BodyContentProps {
+  errors?: FieldErrorsImpl<any>;
+  register: UseFormRegister<any>;
+  isLoading?: boolean;
 }
