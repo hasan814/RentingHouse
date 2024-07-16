@@ -25,6 +25,7 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/types/*": ["src/types/*"],
       "@/providers/*": ["src/providers/*"],
+      "@/libs/*": ["src/libs/*"],
       "@/models/*": ["src/models/*"],
       "@/api/*": ["src/app/api/*"],
       "@/elements/*": ["src/components/elements/*"],
